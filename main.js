@@ -1,9 +1,16 @@
 const toggle_btn = document.querySelector(".toggle-button");
 const navbarlink = document.querySelector(".navbar_links");
+const navbarlinkli = document.querySelectorAll(".navbar_links ul li");
 const navbar = document.querySelector(".navbar");
 
 toggle_btn.addEventListener("click", () => {
   navbarlink.classList.toggle("active");
+});
+
+navbarlinkli.forEach((nav) => {
+  nav.addEventListener("click", () => {
+    navbarlink.classList.remove("active");
+  });
 });
 
 const texts = ["Software Engineer", "Frontend Enthusiastic", "Avid Learner"];
